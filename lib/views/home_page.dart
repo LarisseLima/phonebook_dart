@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           _showContactPage();
         },
-        child: Icon(Icons.add),
+        child: Icon(Icons.add_circle_outline),
         backgroundColor: Color(0xDD660708),
       ),
       body: ListView.builder(
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                   image: DecorationImage(
                       image: contacts[index].img != null
                           ? FileImage(File(contacts[index].img))
-                          : AssetImage("assets/frida.png"),
+                          : AssetImage("images/person.png"),
                       fit: BoxFit.cover),
                 ),
               ),

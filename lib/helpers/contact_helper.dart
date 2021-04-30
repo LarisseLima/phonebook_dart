@@ -11,7 +11,9 @@ final String imgColumn = "imgColumn";
 
 class ContactHelper {
   static final ContactHelper _instance = ContactHelper.internal();
+
   factory ContactHelper() => _instance;
+
   ContactHelper.internal();
 
   Database _db;

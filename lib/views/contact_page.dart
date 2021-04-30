@@ -42,7 +42,7 @@ class _ContactPageState extends State<ContactPage> {
       onWillPop: _requestPop,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: Color(0xDD660708),
           title: Text(_editedContact.name ?? "Novo Contato"),
           centerTitle: true,
         ),
@@ -54,7 +54,7 @@ class _ContactPageState extends State<ContactPage> {
               FocusScope.of(context).requestFocus(_nameFocus);
             }
           },
-          child: Icon(Icons.save),
+          child: Icon(Icons.save_alt),
           backgroundColor: Color(0xDD660708),
         ),
         body: SingleChildScrollView(
@@ -66,16 +66,17 @@ class _ContactPageState extends State<ContactPage> {
                   width: 140.0,
                   height: 140.0,
                   decoration: BoxDecoration(
+                    color: Color(0xDD660708),
                     shape: BoxShape.circle,
                     image: DecorationImage(
                         image: _editedContact.img != null
                             ? FileImage(File(_editedContact.img))
-                            : AssetImage("assets/frida.png"),
+                            : AssetImage("images/person.png"),
                         fit: BoxFit.cover),
                   ),
                 ),
                 onTap: () {
-                  ImagePicker.pickImage(source: ImageSource.camera)
+                  ImagePicker.pickImage(source: ImageSource.gallery)
                       .then((file) {
                     if (file == null) return;
                     setState(() {
